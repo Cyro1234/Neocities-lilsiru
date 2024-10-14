@@ -1,0 +1,267 @@
+@font-face {
+    font-family: Windows Regular;
+    src: url('fonts/Windows-Regular.ttf');
+}
+
+html, body {
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Windows Regular';
+}
+
+body {
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #BEBEBE;
+}
+
+.cinza_site {
+    background-color: #BEBEBE;
+}
+
+nav {
+    justify-content: space-around;
+}
+
+#nav_cima {
+    background: #000080;
+    height: auto;
+    padding: 0.5em;
+}
+
+.windows-button {
+    display: flex;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: #BEBEBE;
+    border-top-color: #EFEFEF;
+    border-left-color: #EFEFEF;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+}
+
+.windows-button:active{
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #EFEFEF;
+    border-bottom-color: #EFEFEF;
+}
+
+.windows-button img {
+    width: 100%;
+    align-items: center;
+}
+
+#nav_baixo {
+    padding-left: 0.5em;
+    background: #BEBEBE;
+    height: auto;
+    border-bottom: solid #ABABAB;
+}
+
+div#borda_site {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-style: outset;
+    border-color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* Altura ocupa a tela inteira */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+}
+
+.nav-list-2 {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list-2 li {
+    padding: 0.5em;
+}
+
+.nav-list-2 a {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    border-style: outset;
+    border-color: #ffffff00;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.nav-list-2 a:hover {
+    border-style: outset;
+    border-color: #EFEFEF;
+}
+
+.nav-list-2 a:active {
+    border-style: inset;
+    border-color: #EFEFEF;
+}
+
+.nav-list-2 a span {
+    text-decoration: underline;
+}
+
+#tela {
+    background-size: cover;
+    background-repeat: repeat;
+    background-image: url('/assets/images/20170914201842_1.webp');
+    border-style: solid;
+    border-top-color: #404040;
+    border-left-color: #404040;
+    border-right-color: #EFEFEF;
+    border-bottom-color: #EFEFEF;
+    margin: 0.4em;
+    display: flex;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#elementos {
+    box-sizing: border-box;
+    display: flex;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    /* Mais flexível para diferentes tamanhos de tela */
+    max-width: 1200px;
+    /* Limite de largura */
+    height: fit-content;
+    padding: 2em;
+    /* Redução do padding */
+    margin-top: 2em;
+    margin-bottom: 2em;
+    box-shadow: 5px 5px 10px;
+}
+
+#elementos ul {
+    list-style: none;
+}
+
+.perfil {
+    width: 250px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil {
+    width: 100%;
+    /* A largura da imagem será ajustada automaticamente */
+    max-width: 400px;
+    /* Limite máximo de largura */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.borda-perfil {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+}
+
+#elementos h1#nome {
+    display: flex;
+    left: 100px;
+    letter-spacing: 0.1em;
+    height: fit-content;
+    transform: rotate(-45deg);
+    position: absolute;
+    font-size: 50px;
+    left: -35px;
+    top: -5px;
+    z-index: 2;
+}
+
+.rainbow_text {
+    color: white;
+    background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0, 255, 0) 14.28%,
+            rgb(0, 255, 255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+    background-size: 600vw 600vw;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow_animation 10s linear infinite forwards;
+}
+
+.info {
+    width: 100%;
+    text-align: end;
+    border-bottom: gray dashed;
+    padding-bottom: 1em;
+}
+
+#sobre_mim {
+    border-bottom: #000000 solid;
+    margin-bottom: 1em;
+}
+
+@keyframes rainbow_animation {
+    0%{
+        background-position-x: 0%;
+      }
+    
+    100%{
+        background-position-x: 600vw;
+      }
+}
+
+@media (max-width: 768px) {
+    #elementos {
+        width: 95%;
+        padding: 2em;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #elementos {
+        padding: 1em;
+    }
+
+    .foto-perfil {
+        max-width: 300px;
+    }
+
+    .perfil {
+        width: 125px;
+    }
+
+    #elementos h1#nome {
+        font-size: 25px;
+        left: -15px;
+        top: -5px;
+    }
+}
+
+@media (max-width: 375px) {
+    .perfil {
+        width: 125px;
+    }
+
+    #elementos h1 {
+        font-size: 25px;
+    }
+}
